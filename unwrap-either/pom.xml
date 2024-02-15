@@ -9,7 +9,7 @@
     <parent>
         <groupId>se.openresult</groupId>
         <artifactId>unwrap-either-parent</artifactId>
-        <version>0.0.1</version>
+        <version>${revision}</version>
     </parent>
 
     <dependencies>

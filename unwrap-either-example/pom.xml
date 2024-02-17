@@ -16,7 +16,7 @@
         <dependency>
             <groupId>se.openresult</groupId>
             <artifactId>unwrap-either</artifactId>
-            <version>${project.parent.version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

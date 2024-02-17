@@ -6,8 +6,10 @@
     <groupId>se.openresult</groupId>
     <artifactId>unwrap-either-parent</artifactId>
     <version>${revision}</version>
-    <name>unwrap-either-parent</name>
+    <name>${project.groupId}:${project.artifactId}</name>
     <packaging>pom</packaging>
+    <description>Java library for simplifying Either unwrapping</description>
+    <url>https://github.com/OpenResult/unwrap-either</url>
 
     <modules>
         <module>unwrap-either</module>
@@ -33,18 +35,41 @@
         <maven.compiler.release>21</maven.compiler.release>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <revision>0.0.7</revision>
+        <revision>0.0.8</revision>
         <auto-service.version>1.1.1</auto-service.version>
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/OpenResult/unwrap-either</url>
+            <id>ossrh</id>
+            <name>Central Repository OSSRH</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <developers>
+        <developer>
+            <name>Magua</name>
+            <email>unwrap-either@openresult.se</email>
+            <organization>Open Result</organization>
+            <organizationUrl>https://openresult.se</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/OpenResult/unwrap-either.git</connection>
+        <developerConnection>scm:git:ssh://github.com:OpenResult/unwrap-either.git</developerConnection>
+        <url>https://github.com/OpenResult/unwrap-either/tree/master</url>
+    </scm>
+
 
 </project>

@@ -85,7 +85,7 @@ public class UnwrappedProcessor extends AbstractProcessor {
         }
 
         String simpleClassName = className.substring(lastDot + 1);
-        String wrapperClassName = className + "Unwrapped";
+        String wrapperClassName = className + "UnwrappedGen";
         String wrappedSimpleClassName = wrapperClassName.substring(lastDot + 1);
         String wrappedExceptionClassName = wrapperClassName + "Exception";
         String wrappedSimpleExceptionClassName = wrappedExceptionClassName.substring(lastDot + 1);
@@ -104,7 +104,8 @@ public class UnwrappedProcessor extends AbstractProcessor {
             out.println("import java.util.function.Function;");
             out.println("import io.jbock.util.Either;");
             out.println();
-
+            
+            out.println("@javax.annotation.processing.Generated(\"se.openresult.unwrapeither.UnwrappedProcessor\")");
             out.print("public abstract class ");
             out.print(wrappedSimpleClassName);
             out.println("<T, R> implements Function<T, R> {");
@@ -157,6 +158,14 @@ public class UnwrappedProcessor extends AbstractProcessor {
             out.println("            return Either.left(e.left);");
             out.println("        }");
             out.println("    }");
+            out.println();
+            out.println();
+            out.println(String.format("    public R executeThrows(T arg) {", leftClass));
+            out.println("        return this.apply(arg);");
+            out.println("    }");
+            out.println();
+
+
             out.println("}");
 
         }
@@ -178,6 +187,7 @@ public class UnwrappedProcessor extends AbstractProcessor {
                 out.println();
             }
 
+            out.println("@javax.annotation.processing.Generated(\"se.openresult.unwrapeither.UnwrappedProcessor\")");
             out.print("public class ");
             out.print(wrappedSimpleExceptionClassName);
             out.println(" extends RuntimeException {");

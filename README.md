@@ -4,7 +4,7 @@ A library idea to make chained Either unwrapping barable in java.
 ![GitHub Release](https://img.shields.io/github/v/release/OpenResult/unwrap-either?include_prereleases)
 
 ## Model business logic with Either
-A popular way to make consise and easily testable steps in your business logic is to use Either's. It could looks something like this.
+A popular way to make consise and easily testable steps in your business logic is to use Either's. It could look something like this.
 ```java
     Either<ServiceOneError, Integer> findUserId(String cookie) {
         if (cookie.startsWith("valid")) {

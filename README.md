@@ -1,7 +1,9 @@
 # Unwrap Either
 A library idea to make chained Either unwrapping barable in java.
 
-![GitHub Release](https://img.shields.io/github/v/release/OpenResult/unwrap-either?include_prereleases)
+![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fse%2Fopenresult%2Funwrap-either%2Fmaven-metadata.xml)
+![Maven Central Version](https://img.shields.io/maven-central/v/se.openresult/unwrap-either)
+
 
 ## Model business logic with Either
 A popular way to make consise and easily testable steps in your business logic is to use Either's. It could look something like this.
@@ -85,7 +87,7 @@ And then you can chain your unwrapped business logic in similar clear way as Rus
 <dependency>
   <groupId>se.openresult</groupId>
   <artifactId>unwrap-either</artifactId>
-  <version>0.0.6</version>
+  <version>0.0.12</version>
 </dependency>
 ```
 
@@ -143,3 +145,15 @@ public class ServiceOneUnwrapped extends ServiceOneUnwrappedGen<String, String> 
 # Todo
 - [ ] Make unwrapped functions availabe in acutal annotated class
 - [ ] Guice examples
+
+
+# Development
+
+## Release
+```bash
+mvn \
+            -Pci-cd \
+            --batch-mode \
+            -Dgpg.passphrase=<OSSRH_GPG_SECRET_KEY_PASSWORD> \
+            deploy
+```
